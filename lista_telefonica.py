@@ -14,19 +14,19 @@ while True:
         continue
     elif escolha == '1':
         os.system('cls')
-        CONTATOS = CONTATOS.update(add_cont())
+        contatos.update(add_cont())
         time.sleep(3)
         os.system("cls")   
         continue    
     elif escolha == '2':
         os.system('cls')
-        remover_contato(CONTATOS)
+        remover_contato(contatos)
         time.sleep(3)
         os.system("cls") 
         continue
     elif escolha == '3':
         os.system('cls')
-        listar_contatos(CONTATOS)
+        listar_contatos(contatos)
         time.sleep(3)
         os.system("cls") 
         continue

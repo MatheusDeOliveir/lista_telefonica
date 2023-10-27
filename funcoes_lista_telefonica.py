@@ -1,6 +1,6 @@
 import os
 import time
-CONTATOS = {}
+contatos = {}
 
 
 
@@ -43,10 +43,10 @@ def add_cont(dict={}):
     return dict
     
     
-def remover_contato(dict=CONTATOS):
+def remover_contato(dict=contatos):
     
     while True:
-        for nome, numero in (CONTATOS.items()):
+        for nome, numero in (contatos.items()):
             print (f"{nome} -- ({(numero[0:2])}) - {numero[2:7]}.{numero[7:11]} \n")
             
             
@@ -61,13 +61,13 @@ def remover_contato(dict=CONTATOS):
             time.sleep(3)
             os.system('cls')
             continue
-        elif CONTATOS.get(cont_exc.capitalize()) is None:
+        elif contatos.get(cont_exc.capitalize()) is None:
             print ("O Contato informado não consta no banco de dados. \n\n")
             time.sleep(3)
             os.system('cls')
             continue
         else:
-            del(CONTATOS[cont_exc.capitalize()])
+            del(contatos[cont_exc.capitalize()])
             print (f"O contato {cont_exc} foi deletado com sucesso. \n")
             time.sleep(3)
             os.system('cls')
@@ -87,9 +87,9 @@ def remover_contato(dict=CONTATOS):
                 return None
             
             
-def listar_contatos(dict=CONTATOS):
+def listar_contatos(dict=contatos):
     
-    for nome, numero in (CONTATOS.items()):
+    for nome, numero in (contatos.items()):
         print (f"{nome} -- ({(numero[0:2])}) - {numero[2:7]}.{numero[7:11]} \n")
         
     while True:
