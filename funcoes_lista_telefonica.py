@@ -1,12 +1,14 @@
 import os
 import time
 contatos = {}
+parent_dir = os.getcwd()  
+        
+        
+pasta = 'Agenda' 
+caminho = os.path.join(parent_dir, pasta)
 
-
-
-def add_cont(dict={}):
-    
-    
+def add(): 
+    contato_add = {}
     while True:
         print ("Digite o nome do contato: \n")
         nome = input ("")
@@ -35,12 +37,12 @@ def add_cont(dict={}):
         
         
         print ("Número registrado !\n\n")
-        dict.update({nome:num})
+        contato_add.update({nome:num})
         time.sleep(3)
         os.system('cls')
         
         break
-    return dict
+    return contato_add
     
     
 def remover_contato(dict=contatos):
@@ -111,4 +113,7 @@ def listar_contatos(dict=contatos):
             continue
         
         
-        
+def gerar_listagem(cont=contatos):
+    listagem = open(f'{caminho}\Listagem.txt', 'w')
+    for nome, numero in (contatos.items()):
+        listagem.write(f"{nome} -- ({(numero[0:2])}) - {numero[2:7]}.{numero[7:11]} \n") 
